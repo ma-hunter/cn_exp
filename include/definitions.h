@@ -19,13 +19,13 @@ using uint = unsigned int;
 using i16 = int16_t;
 using i32 = int32_t;
 using i64 = int64_t;
-using i128 = int128_t;
+using i128 = __int128_t;
 using uch = uint8_t;
 using u16 = uint16_t;
 using u32 = uint32_t;
 using u64 = uint64_t;
 
-namespace net {
+namespace defs {
 
     struct ipv4_addr {
         uchar bt[4];

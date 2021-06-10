@@ -8,5 +8,5 @@ set(NPCAP_LIB ./module/lib/x64)
 include_directories(${NPCAP_INCLUDE} ./include)
 link_directories(${NPCAP_LIB})
 
-add_executable(cn_exp main.cpp)
-target_link_libraries(npcap_examples Packet.lib wpcap.lib)
+add_executable(cn_exp main.cpp src/utils.cpp)
+target_link_libraries(cn_exp Packet.lib wpcap.lib)
