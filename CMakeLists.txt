@@ -10,8 +10,8 @@ aux_source_directory(./test TEST)
 include_directories(${NPCAP_INCLUDE} ./include)
 link_directories(${NPCAP_LIB})
 
-add_executable(cn_exp main.cpp src/utils.cpp)
+add_executable(cn_exp main.cpp src/utils.cpp src/handlers.cpp)
 target_link_libraries(cn_exp Packet.lib wpcap.lib)
 
-add_executable(cn_exp_test test/main.cpp ${SRC})
+add_executable(cn_exp_test test/main.cpp ${SRC} src/handlers.cpp)
 target_link_libraries(cn_exp Packet.lib wpcap.lib)

@@ -37,7 +37,7 @@
 
 /*
  * Some minor differences between sockets on various platforms.
- * We include whatever sockets are needed for Internet-protocol
+ * We include whatever sockets are needed for Internet-eth_type
  * socket access on UN*X and Windows.
  */
 #ifdef _WIN32

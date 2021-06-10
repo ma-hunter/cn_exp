@@ -106,6 +106,27 @@ namespace defs {
         ushort id;
         ushort seq;
     };
+
+    constexpr auto eth_header_length = 14;
+
+    enum eth_type {
+        IPv4 = 0x0800,
+        IPv6 = 0x86DD,
+        ARP = 0x0806,
+        RARP = 0x0835
+    };
+
+    enum ipv4_protocol {
+        TCP = 6,
+        UDP = 17,
+        ICMP = 1
+    };
+
+    enum ipv6_protocol {
+        TCPv6 = 6,
+        UDPv6 = 17,
+        ICMPv6 = 58
+    };
 }
 
 #endif //CN_EXP_DEFINITIONS_H

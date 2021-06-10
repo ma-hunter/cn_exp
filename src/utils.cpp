@@ -33,3 +33,31 @@ ostream &utils::operator <<(ostream &os, const ipv6_addr &ip) {
     return os;
 }
 
+ostream &utils::operator <<(ostream &os, const mac_addr &mac) {
+    int cnt = 6;
+    for (auto byte : mac.bt) {
+        os << int_to_hex(byte);
+        if (-- cnt) os << ':';
+    }
+    return os;
+}
+
+ostream &utils::operator <<(ostream &os, const eth_type &pro) {
+    switch (pro) {
+        case defs::IPv4:
+            os << "IPv4";
+            break;
+        case defs::IPv6:
+            os << "IPv6";
+            break;
+        case defs::ARP:
+            os << "ARP";
+            break;
+        case defs::RARP:
+            os << "RARP";
+            break;
+        default: os << "undefined";
+    }
+    return os;
+}
+

@@ -26,11 +26,14 @@ namespace utils {
         itoa(x, buf, 16);
         return move(string(buf));
     }
-    string to_hex_string(short x);
 
     ostream &operator <<(ostream &os, const ipv4_addr &ip);
 
     ostream &operator <<(ostream &os, const ipv6_addr &ip);
+
+    ostream &operator <<(ostream &os, const mac_addr &mac);
+
+    ostream &operator <<(ostream &os, const eth_type &pro);
 }
 using namespace utils;
 
