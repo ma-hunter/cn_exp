@@ -65,7 +65,28 @@ namespace utils {
     ostream &operator <<(ostream &os, const mac_addr &mac);
 
     ostream &operator <<(ostream &os, const eth_type &pro);
+
+    ostream &operator <<(ostream &os, const ipv4_protocol &pro);
+
+    ostream &operator <<(ostream &os, const ipv6_protocol &pro);
+
+    ostream &operator <<(ostream &os, const arp_oc &pro);
+
+    ostream &operator <<(ostream &os, const icmp_type &echo);
 }
 using namespace utils;
+
+namespace converter {
+    using namespace std;
+    using namespace defs;
+
+    tuple<uint, uint, uint> ipv6_vtf_extract(uint vtf);
+
+    string tcp_flag_to_string(tcp_flag tfl);
+
+    string ipv4_to_string(ipv4_addr ad);
+
+    string ipv6_to_string(ipv6_addr ad);
+}
 
 #endif //CN_EXP_UTILS_H

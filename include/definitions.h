@@ -63,7 +63,7 @@ namespace defs {
         uint vtf;           // Version traffic class flow label
         ushort len;         // Payload length
         uchar next;         // Next header
-        uchar ttl;          // Time to live
+        uchar ttl;          // Hop limit (Similar to Time to live in IPv4)
         ipv6_addr src;      // Source address
         ipv6_addr des;      // Destination address
     };
@@ -108,6 +108,7 @@ namespace defs {
     };
 
     constexpr auto eth_header_length = 14;
+    constexpr auto pro_header_length = 20 + eth_header_length;
 
     enum eth_type {
         IPv4 = 0x0800,
@@ -126,6 +127,20 @@ namespace defs {
         TCPv6 = 6,
         UDPv6 = 17,
         ICMPv6 = 58
+    };
+
+    enum arp_oc {
+        ARP_req = 1,
+        ARP_rep = 2,
+        RARP_req = 3,
+        RARP_rep = 4
+    };
+
+    using tcp_flag = uchar;
+
+    enum icmp_type {
+        ICMP_req = 8,
+        ICMP_rep = 0
     };
 }
 
