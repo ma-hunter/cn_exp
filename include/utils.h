@@ -62,7 +62,9 @@ namespace utils {
 
     ostream &operator <<(ostream &os, const ipv6_addr &ip);
 
-    ostream &operator <<(ostream &os, const mac_addr &ip);
+    ostream &operator <<(ostream &os, const mac_addr &mac);
+
+    ostream &operator <<(ostream &os, const eth_type &pro);
 }
 using namespace utils;
 

@@ -1087,7 +1087,7 @@
 #define DLT_DVB_CI		235
 
 /*
- * Variant of 3GPP TS 27.010 multiplexing protocol (similar to, but
+ * Variant of 3GPP TS 27.010 multiplexing eth_type (similar to, but
  * *not* the same as, 27.010).  Requested by Hans-Christoph Schemmel
  * <hans-christoph.schemmel@cinterion.com>.
  */
@@ -1150,7 +1150,7 @@
 
 /*
  * ng4T GmbH's UMTS Iub/Iur-over-ATM and Iub/Iur-over-IP format as
- * used by their ng40 protocol tester.
+ * used by their ng40 eth_type tester.
  *
  * Requested by Jens Grimmer <jens.grimmer@ng4t.com>.
  */
@@ -1214,7 +1214,7 @@
 #define DLT_BLUETOOTH_LE_LL	251
 
 /*
- * DLT type for upper-protocol layer PDU saves from wireshark.
+ * DLT type for upper-eth_type layer PDU saves from wireshark.
  *
  * the actual contents are determined by two TAGs stored with each
  * packet:
@@ -1227,7 +1227,7 @@
 #define DLT_WIRESHARK_UPPER_PDU	252
 
 /*
- * DLT type for the netlink protocol (nlmon devices).
+ * DLT type for the netlink eth_type (nlmon devices).
  */
 #define DLT_NETLINK		253
 
@@ -1323,7 +1323,7 @@
 
 /*
  * per Steve Karg <skarg@users.sourceforge.net>, formats for Wattstopper
- * Digital Lighting Management room bus serial protocol captures.
+ * Digital Lighting Management room bus serial eth_type captures.
  */
 #define DLT_WATTSTOPPER_DLM     263
 
@@ -1355,7 +1355,7 @@
 
 /*
  * per "Selvig, Bjorn" <b.selvig@ti.com> used for
- * TI protocol sniffer.
+ * TI eth_type sniffer.
  */
 #define DLT_TI_LLN_SNIFFER	269
 
@@ -1420,7 +1420,7 @@
 #define DLT_OPENVIZSLA	        278
 
 /*
- * The Elektrobit High Speed Capture and Replay (EBHSCR) protocol is produced
+ * The Elektrobit High Speed Capture and Replay (EBHSCR) eth_type is produced
  * by a PCIe Card for interfacing high speed automotive interfaces.
  *
  * The specification for this frame format can be found at:
@@ -1459,7 +1459,7 @@
 #define DLT_DSA_TAG_EDSA	285
 
 /*
- * Payload of lawful intercept packets using the ELEE protocol;
+ * Payload of lawful intercept packets using the ELEE eth_type;
  * https://socket.hr/draft-dfranusic-opsawg-elee-00.xml
  * https://xml2rfc.tools.ietf.org/cgi-bin/xml2rfc.cgi?url=https://socket.hr/draft-dfranusic-opsawg-elee-00.xml&modeAsFormat=html/ascii
  */
