@@ -140,7 +140,7 @@ string converter::tcp_flag_to_string(tcp_flag tfl) {
 string converter::ipv4_to_string(ipv4_addr ad) {
     string ret;
     ret.reserve(24);
-    for (auto ii : ad.bt) ret.append(to_string(ii)).append(".");
+    for (auto ii : ad.bt) ret.append(to_string((int)ii)).append(".");
     ret.pop_back();
     return ret;
 }

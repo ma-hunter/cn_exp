@@ -4,6 +4,7 @@
 
 #include "handlers.h"
 #include "utils.h"
+#include "helpers.h"
 
 #include <ctime>
 #include <iostream>
@@ -75,6 +76,7 @@ DEFINE_PKG_HANDLER(ipv4) {
             break;
         default: cerr << "Unknown ipv4_protocol type recognized." << endl;
     }
+    helpers::protocol_helper_callback(ih);
 }
 
 DEFINE_PKG_HANDLER(ipv6) {
@@ -100,6 +102,7 @@ DEFINE_PKG_HANDLER(ipv6) {
             break;
         default: cerr << "Unknown ipv6_protocol type recognized." << endl;
     }
+    helpers::protocol_helper_callback(ih);
 }
 
 DEFINE_PKG_HANDLER(arp) {
@@ -113,6 +116,7 @@ DEFINE_PKG_HANDLER(arp) {
     cout << "Destination IP address: " << ah->des_ip << endl;
     cout << "Source MAC address: " << ah->src_mac << endl;
     cout << "Destination MAC address: " << ah->des_mac << endl;
+    helpers::protocol_helper_callback(ah);
 }
 
 DEFINE_PKG_HANDLER(icmp) {
@@ -128,8 +132,8 @@ DEFINE_PKG_HANDLER(tcp) {
     auto th = (tcp_header *)(data + pro_header_length);
     cout << "Source port: " << ntohs(th->sp) << endl;
     cout << "Destination port: " << ntohs(th->dp) << endl;
-    cout << "Sequence: " << ntohs(th->sq) << endl;
-    cout << "Acknowledgement: " << ntohs(th->ac) << endl;
+    cout << "Sequence: " << ntohl(th->sq) << endl;
+    cout << "Acknowledgement: " << ntohl(th->ac) << endl;
     const auto offset = th->off & 0xf0 >> 4;
     cout << "Data offset: " << offset << " (" << (offset << 2) << " B)" << endl;
     cout << "Flags: " << converter::tcp_flag_to_string(th->fl) << endl;

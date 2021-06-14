@@ -3,6 +3,7 @@
 #include "definitions.h"
 #include "utils.h"
 #include "handlers.h"
+#include "helpers.h"
 
 int main() {
     std::cout << "Hello, World! Hello NpCap!" << std::endl;
@@ -60,5 +61,9 @@ int main() {
     cout << endl;
     pcap_loop(ad_handle, pkt_num, GET_PKG_HANDLER(packet), nullptr);
     pcap_close(ad_handle);
+    cout << endl;
+    cout << "Flow counts: " << endl;
+    helpers::output_ip_counts();
+    cout << endl;
     return 0;
 }
