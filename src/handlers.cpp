@@ -52,7 +52,7 @@ DEFINE_PKG_HANDLER(ipv4) {
     cout << "Version: " << (ih->v_ihl & 0xf0 >> 4) << endl;
     const auto ihl = ih->v_ihl & 0x0f;
     cout << "Header length: " << ihl << " (" << (ihl * 4) << "B)" << endl;
-    cout << "Type of service: " << ih->tos << endl;
+    cout << "Type of service: " << int(ih->tos) << endl;
     cout << "Total length: " << ntohs(ih->len) << endl;
     cout << "Identification: " << ntohs(ih->id) << endl;
     const auto flags = ih->fl_fof & 0xe000 >> 12;

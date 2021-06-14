@@ -10,7 +10,7 @@ using namespace defs;
 ostream &utils::operator <<(ostream &os, const ipv4_addr &ip) {
     int cnt = 4;
     for (auto byte : ip.bt) {
-        os << byte;
+        os << (int) byte;
         if (-- cnt) os << '.';
     }
     return os;
