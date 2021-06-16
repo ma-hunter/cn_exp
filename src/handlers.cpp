@@ -20,8 +20,8 @@ DEFINE_PKG_HANDLER(packet) {
     time_t local_tv_sec = header->ts.tv_sec;
     lt = localtime(&local_tv_sec);
     strftime(time_str, sizeof time_str, "%H:%M:%S", lt);
-    cout << "Time: " << time_str << ", " << header->ts.tv_usec << "\t\tLength: "
-         << header->len << endl;
+    cout << endl << "Time: " << time_str << ", " << header->ts.tv_usec
+         << "\t\tLength: " << header->len << endl;
     CALL_PKG_HANDLER(ethernet, param, header, data);
 }
 
