@@ -135,7 +135,7 @@ DEFINE_PKG_HANDLER(tcp) {
     cout << "Sequence: " << ntohl(th->sq) << endl;
     cout << "Acknowledgement: " << ntohl(th->ac) << endl;
     const auto offset = th->off & 0xf0 >> 4;
-    cout << "Data offset: " << offset << " (" << (offset << 2) << " B)" << endl;
+    cout << "Data offset: " << offset << " (" << (offset >> 2) << " B)" << endl;
     cout << "Flags: " << converter::tcp_flag_to_string(th->fl) << endl;
     cout << "Window: " << th->windows << endl;
     cout << "Checksum: " << th->checksum << endl;
